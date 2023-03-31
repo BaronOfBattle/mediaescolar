@@ -12,6 +12,10 @@
 
 </p>
 
-<img src="https://i.ibb.co/GFf3w9k/1.png" alt="1" border="0">
-<img src="https://i.ibb.co/j4L3L1s/2.png" alt="2" border="0">
-<img src="https://i.ibb.co/h7rnbLw/3.png" alt="3" border="0">
+<div style="display:flex;">
+    <img src="https://i.ibb.co/GFf3w9k/1.png" alt="1" border="0" width="274" height="239" style="margin-right:5px;">
+    <img src="https://i.ibb.co/j4L3L1s/2.png" alt="2" border="0" width="242" height="332" style="margin-right:5px;">
+    <img src="https://i.ibb.co/h7rnbLw/3.png" alt="3" border="0" width="190" height="143">
+</div>
+
+
