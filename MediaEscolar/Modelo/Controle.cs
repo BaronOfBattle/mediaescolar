@@ -13,9 +13,13 @@ namespace MediaEscolar.Modelo
     {
         public bool tem;
         public String mensagem = "";
+        public String nomeUsuario = "";
+        public String matriculaUsuario = "";
+
         public bool acessar(String matricula, String senha)
         {
             Comandos comando = new Comandos();
+
             tem = comando.verificarLogin(matricula, senha);
             if (!comando.mensagem.Equals(""))
             {
@@ -38,31 +42,27 @@ namespace MediaEscolar.Modelo
         public int getTipoUsuario(string matricula)
         {
             int tipo = -1;
-            try
+            Conexao conexao = new Conexao();
+            SqlConnection con = conexao.Conectar();
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "SELECT tipo FROM logins WHERE matricula = @matricula";
+            cmd.Parameters.AddWithValue("@matricula", matricula);
+            cmd.Connection = con;
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
             {
-                Conexao con = new Conexao();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT tipo FROM logins WHERE matricula = @matricula";
-                cmd.Parameters.AddWithValue("@matricula", matricula);
-                con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    dr.Read();
-                    tipo = Convert.ToInt32(dr["tipo"]);
-                }
-                dr.Close();
+                dr.Read();
+                tipo = Convert.ToInt32(dr["tipo"]);
             }
-            catch (Exception ex)
-            {
-                mensagem = "Erro ao buscar tipo de usuário: " + ex.Message;
-            }
-            finally
-            {
-                Conexao con = new Conexao();
-                con.Close();
-            }
+
+            dr.Close();
+            conexao.Desconectar();
+
             return tipo;
         }
+
+
     }
 }

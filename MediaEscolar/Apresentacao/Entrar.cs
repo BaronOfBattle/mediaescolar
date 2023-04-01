@@ -1,10 +1,13 @@
 ﻿using MediaEscolar.Modelo;
+using MediaEscolar.SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,8 +34,27 @@ namespace MediaEscolar.Apresentacao
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
+            Conexao con = new Conexao();
             controle.acessar(txbMatricula.Text, txbSenha.Text);
             int tipoUsuario = controle.getTipoUsuario(txbMatricula.Text);
+            SqlCommand cmd = new SqlCommand();
+            string query = "SELECT nome and matricula FROM logins WHERE matricula = @matricula";
+            cmd.Parameters.AddWithValue("@matricula", txbMatricula.Text);
+            cmd.CommandText = query;
+            cmd.Connection = con.Conectar();
+            con.Conectar();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                controle.nomeUsuario = reader["nome"].ToString();
+                controle.matriculaUsuario = reader["matricula"].ToString();
+            }
+            reader.Close();
+
+            con.Desconectar();
+
             if (controle.mensagem.Equals(""))
             {
                 if (controle.tem)
@@ -44,6 +66,9 @@ namespace MediaEscolar.Apresentacao
                     }
                     else
                     {
+                        Aluno aluno = new Aluno(controle);
+                        aluno.Show();
+                        this.Close();
                     }
                 }
                 else

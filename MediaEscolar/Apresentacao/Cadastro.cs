@@ -26,7 +26,7 @@ namespace MediaEscolar.Apresentacao
         private void btnFinalizarCadastro_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
-            bool isProfessor = radProfessor.Checked; // obter o valor do radiobutton
+            bool isProfessor = radProfessor.Checked; 
             String mensagem = controle.cadastrar(txtMatricula.Text, txtSenha.Text, txtConfirmarSenha.Text,isProfessor);
             if (controle.tem)
             {

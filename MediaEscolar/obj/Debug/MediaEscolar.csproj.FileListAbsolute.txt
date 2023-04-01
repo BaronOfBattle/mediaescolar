@@ -24,3 +24,4 @@ D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.pdb
 D:\github\MediaEscolar\MediaEscolar\bin\Debug\MediaEscolar.exe.config
 D:\github\MediaEscolar\MediaEscolar\bin\Debug\MediaEscolar.exe
 D:\github\MediaEscolar\MediaEscolar\bin\Debug\MediaEscolar.pdb
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Apresentacao.Aluno.resources

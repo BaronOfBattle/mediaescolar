@@ -99,7 +99,7 @@
             this.radAluno.Location = new System.Drawing.Point(26, 220);
             this.radAluno.Name = "radAluno";
             this.radAluno.Size = new System.Drawing.Size(59, 20);
-            this.radAluno.TabIndex = 6;
+            this.radAluno.TabIndex = 4;
             this.radAluno.TabStop = true;
             this.radAluno.Text = "Aluno";
             this.radAluno.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             this.radProfessor.Location = new System.Drawing.Point(91, 220);
             this.radProfessor.Name = "radProfessor";
             this.radProfessor.Size = new System.Drawing.Size(83, 20);
-            this.radProfessor.TabIndex = 7;
+            this.radProfessor.TabIndex = 5;
             this.radProfessor.TabStop = true;
             this.radProfessor.Text = "Professor";
             this.radProfessor.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(198, 22);
-            this.txtSenha.TabIndex = 9;
+            this.txtSenha.TabIndex = 2;
             // 
             // txtConfirmarSenha
             // 
@@ -132,7 +132,7 @@
             this.txtConfirmarSenha.Name = "txtConfirmarSenha";
             this.txtConfirmarSenha.PasswordChar = '*';
             this.txtConfirmarSenha.Size = new System.Drawing.Size(198, 22);
-            this.txtConfirmarSenha.TabIndex = 10;
+            this.txtConfirmarSenha.TabIndex = 3;
             // 
             // txtMatricula
             // 
@@ -140,14 +140,14 @@
             this.txtMatricula.Location = new System.Drawing.Point(26, 84);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(198, 22);
-            this.txtMatricula.TabIndex = 11;
+            this.txtMatricula.TabIndex = 1;
             // 
             // btnFinalizarCadastro
             // 
             this.btnFinalizarCadastro.Location = new System.Drawing.Point(54, 246);
             this.btnFinalizarCadastro.Name = "btnFinalizarCadastro";
             this.btnFinalizarCadastro.Size = new System.Drawing.Size(133, 37);
-            this.btnFinalizarCadastro.TabIndex = 12;
+            this.btnFinalizarCadastro.TabIndex = 6;
             this.btnFinalizarCadastro.Text = "Cadastrar";
             this.btnFinalizarCadastro.UseVisualStyleBackColor = true;
             this.btnFinalizarCadastro.Click += new System.EventHandler(this.btnFinalizarCadastro_Click);

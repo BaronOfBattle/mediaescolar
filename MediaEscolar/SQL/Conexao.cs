@@ -30,15 +30,5 @@ namespace MediaEscolar.SQL
                 con.Close();
             }
         }
-
-        internal void Close()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void Open()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

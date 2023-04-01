@@ -62,9 +62,25 @@ namespace MediaEscolar.Modelo
                     return mensagem;
                 }
 
+                // Verificar se a senha já foi cadastrada
+                query = "SELECT senha FROM logins WHERE matricula = @matricula AND tipo = @tipoUsuario";
+                using (SqlCommand selectCommand = new SqlCommand(query, con.Conectar()))
+                {
+                    selectCommand.Parameters.AddWithValue("@matricula", matricula);
+                    selectCommand.Parameters.AddWithValue("@tipoUsuario", tipoUsuario);
+                    string jáCadastrado = (string)selectCommand.ExecuteScalar();
+
+                    if (!string.IsNullOrEmpty(jáCadastrado))
+                    {
+                        con.Desconectar();
+                        this.mensagem = "Você já está cadastrado.";
+                        return mensagem;
+                    }
+                }
+
                 if (string.IsNullOrEmpty(matricula))
                 {
-                    return "Por favor, informe a sua senha.";
+                    return "Por favor, informe a sua matrícula.";
                 }
 
                 if (string.IsNullOrEmpty(senha))
@@ -97,7 +113,7 @@ namespace MediaEscolar.Modelo
                             }
                             else
                             {
-                                this.mensagem = "Erro ao atualizar a senha.";
+                                this.mensagem = "Erro ao realizar cadastro.";
                             }
                         }
                         catch (SqlException)

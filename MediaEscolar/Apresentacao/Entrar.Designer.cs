@@ -60,7 +60,7 @@
             this.txbMatricula.Location = new System.Drawing.Point(15, 34);
             this.txbMatricula.Name = "txbMatricula";
             this.txbMatricula.Size = new System.Drawing.Size(156, 20);
-            this.txbMatricula.TabIndex = 2;
+            this.txbMatricula.TabIndex = 1;
             this.txbMatricula.TextChanged += new System.EventHandler(this.txbMatricula_TextChanged);
             // 
             // txbSenha
@@ -69,14 +69,14 @@
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(156, 20);
-            this.txbSenha.TabIndex = 3;
+            this.txbSenha.TabIndex = 2;
             // 
             // btnEntrar
             // 
             this.btnEntrar.Location = new System.Drawing.Point(15, 103);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(53, 23);
-            this.btnEntrar.TabIndex = 4;
+            this.btnEntrar.Size = new System.Drawing.Size(70, 27);
+            this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(189, 142);
+            this.ClientSize = new System.Drawing.Size(189, 139);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.txbMatricula);
