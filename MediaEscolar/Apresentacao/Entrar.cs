@@ -38,7 +38,7 @@ namespace MediaEscolar.Apresentacao
             controle.acessar(txbMatricula.Text, txbSenha.Text);
             int tipoUsuario = controle.getTipoUsuario(txbMatricula.Text);
             SqlCommand cmd = new SqlCommand();
-            string query = "SELECT nome and matricula FROM logins WHERE matricula = @matricula";
+            string query = "SELECT nome,matricula FROM logins WHERE matricula = @matricula";
             cmd.Parameters.AddWithValue("@matricula", txbMatricula.Text);
             cmd.CommandText = query;
             cmd.Connection = con.Conectar();

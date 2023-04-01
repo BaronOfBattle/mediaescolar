@@ -116,40 +116,40 @@
             // lblMedia1
             // 
             this.lblMedia1.AutoSize = true;
-            this.lblMedia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia1.Location = new System.Drawing.Point(46, 100);
             this.lblMedia1.Name = "lblMedia1";
-            this.lblMedia1.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia1.Size = new System.Drawing.Size(16, 20);
             this.lblMedia1.TabIndex = 7;
             this.lblMedia1.Text = "x";
             // 
             // lblMedia2
             // 
             this.lblMedia2.AutoSize = true;
-            this.lblMedia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia2.Location = new System.Drawing.Point(164, 100);
             this.lblMedia2.Name = "lblMedia2";
-            this.lblMedia2.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia2.Size = new System.Drawing.Size(16, 20);
             this.lblMedia2.TabIndex = 8;
             this.lblMedia2.Text = "x";
             // 
             // lblMedia3
             // 
             this.lblMedia3.AutoSize = true;
-            this.lblMedia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia3.Location = new System.Drawing.Point(278, 100);
             this.lblMedia3.Name = "lblMedia3";
-            this.lblMedia3.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia3.Size = new System.Drawing.Size(16, 20);
             this.lblMedia3.TabIndex = 9;
             this.lblMedia3.Text = "x";
             // 
             // lblMedia4
             // 
             this.lblMedia4.AutoSize = true;
-            this.lblMedia4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedia4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia4.Location = new System.Drawing.Point(394, 100);
             this.lblMedia4.Name = "lblMedia4";
-            this.lblMedia4.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia4.Size = new System.Drawing.Size(16, 20);
             this.lblMedia4.TabIndex = 10;
             this.lblMedia4.Text = "x";
             // 
@@ -184,6 +184,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Aluno";
             this.Text = "Aluno";
+            this.Load += new System.EventHandler(this.Aluno_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

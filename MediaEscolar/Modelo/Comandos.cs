@@ -63,15 +63,16 @@ namespace MediaEscolar.Modelo
                 }
 
                 // Verificar se a senha já foi cadastrada
-                query = "SELECT senha FROM logins WHERE matricula = @matricula AND tipo = @tipoUsuario";
+                query = "SELECT senha FROM logins WHERE matricula = @matricula AND tipo = @tipoUsuario AND senha IS NOT NULL";
                 using (SqlCommand selectCommand = new SqlCommand(query, con.Conectar()))
                 {
                     selectCommand.Parameters.AddWithValue("@matricula", matricula);
                     selectCommand.Parameters.AddWithValue("@tipoUsuario", tipoUsuario);
-                    string jáCadastrado = (string)selectCommand.ExecuteScalar();
+                    var result = selectCommand.ExecuteScalar();
 
-                    if (!string.IsNullOrEmpty(jáCadastrado))
+                    if (result != null)
                     {
+                        string jáCadastrado = result.ToString();
                         con.Desconectar();
                         this.mensagem = "Você já está cadastrado.";
                         return mensagem;
