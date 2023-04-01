@@ -84,5 +84,22 @@ namespace MediaEscolar.Modelo
             reader.Close();
             conexao.Desconectar();
         }
+
+        public string GetMatriculaAluno(string nomeAluno)
+        {
+            string matricula = "";
+            Conexao conexao = new Conexao();
+            SqlCommand cmd = new SqlCommand("SELECT matricula FROM logins WHERE nome = @nome AND tipo = 0", conexao.Conectar());
+            cmd.Parameters.AddWithValue("@nome", nomeAluno);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                matricula = dr["matricula"].ToString();
+            }
+            dr.Close();
+            conexao.Desconectar();
+            return matricula;
+        }
+
     }
 }

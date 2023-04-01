@@ -123,9 +123,9 @@ namespace MediaEscolar.Apresentacao
             this.lblMedia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia1.Location = new System.Drawing.Point(52, 131);
             this.lblMedia1.Name = "lblMedia1";
-            this.lblMedia1.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia1.Size = new System.Drawing.Size(15, 16);
             this.lblMedia1.TabIndex = 7;
-            this.lblMedia1.Text = "x";
+            this.lblMedia1.Text = "X";
             // 
             // lblMedia2
             // 
@@ -133,9 +133,9 @@ namespace MediaEscolar.Apresentacao
             this.lblMedia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia2.Location = new System.Drawing.Point(169, 131);
             this.lblMedia2.Name = "lblMedia2";
-            this.lblMedia2.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia2.Size = new System.Drawing.Size(15, 16);
             this.lblMedia2.TabIndex = 8;
-            this.lblMedia2.Text = "x";
+            this.lblMedia2.Text = "X";
             // 
             // lblMedia3
             // 
@@ -143,9 +143,9 @@ namespace MediaEscolar.Apresentacao
             this.lblMedia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia3.Location = new System.Drawing.Point(282, 131);
             this.lblMedia3.Name = "lblMedia3";
-            this.lblMedia3.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia3.Size = new System.Drawing.Size(15, 16);
             this.lblMedia3.TabIndex = 9;
-            this.lblMedia3.Text = "x";
+            this.lblMedia3.Text = "X";
             // 
             // lblMedia4
             // 
@@ -153,9 +153,9 @@ namespace MediaEscolar.Apresentacao
             this.lblMedia4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia4.Location = new System.Drawing.Point(382, 131);
             this.lblMedia4.Name = "lblMedia4";
-            this.lblMedia4.Size = new System.Drawing.Size(13, 16);
+            this.lblMedia4.Size = new System.Drawing.Size(15, 16);
             this.lblMedia4.TabIndex = 10;
-            this.lblMedia4.Text = "x";
+            this.lblMedia4.Text = "X";
             // 
             // textBox1
             // 

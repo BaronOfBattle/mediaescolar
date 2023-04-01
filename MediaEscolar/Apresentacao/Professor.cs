@@ -31,7 +31,23 @@ namespace MediaEscolar.Apresentacao
 
         private void cbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            string nomeAluno = cbxAlunos.SelectedItem.ToString();
+            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+
+            Conexao conexao = new Conexao();
+            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM tabela_medias WHERE matricula = @matricula", conexao.Conectar());
+            cmd.Parameters.AddWithValue("@matricula", matriculaAluno);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                lblMedia1.Text = dr.IsDBNull(0) ? "X" : dr["media_bim1"].ToString();
+                lblMedia2.Text = dr.IsDBNull(1) ? "X" : dr["media_bim2"].ToString();
+                lblMedia3.Text = dr.IsDBNull(2) ? "X" : dr["media_bim3"].ToString();
+                lblMedia4.Text = dr.IsDBNull(3) ? "X" : dr["media_bim4"].ToString();
+            }
+
+            dr.Close();
+            conexao.Desconectar();
         }
     }
 }
