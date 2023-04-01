@@ -65,26 +65,24 @@ namespace MediaEscolar.Modelo
             return tipo;
         }
 
-        public void PreencherComboBox(ComboBox cbxAlunos)
+        public void PreencherComboBox(ComboBox cbxAunos)
         {
             Conexao conexao = new Conexao();
             SqlConnection con = conexao.Conectar();
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
             string query = "SELECT nome FROM logins WHERE tipo = 0";
+            cmd.Connection = con;
             cmd.CommandText = query;
+
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                cbxAlunos.Items.Add(reader["nome"].ToString());
+                cbxAunos.Items.Add(reader["nome"].ToString());
             }
 
             reader.Close();
             conexao.Desconectar();
         }
-
-
-
     }
 }

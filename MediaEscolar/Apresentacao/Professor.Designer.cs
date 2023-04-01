@@ -1,4 +1,6 @@
-﻿namespace MediaEscolar.Apresentacao
+﻿using System;
+
+namespace MediaEscolar.Apresentacao
 {
     partial class Professor
     {
@@ -53,6 +55,7 @@
             this.cbxAlunos.Name = "cbxAlunos";
             this.cbxAlunos.Size = new System.Drawing.Size(121, 21);
             this.cbxAlunos.TabIndex = 0;
+            this.cbxAlunos.SelectedIndexChanged += new System.EventHandler(this.cbxAlunos_SelectedIndexChanged);
             // 
             // label1
             // 

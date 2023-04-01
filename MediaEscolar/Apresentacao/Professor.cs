@@ -1,8 +1,10 @@
 ﻿using MediaEscolar.Modelo;
+using MediaEscolar.SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ namespace MediaEscolar.Apresentacao
 {
     public partial class Professor : Form
     {
+        private Controle controle;
+
         public Professor()
         {
             InitializeComponent();
@@ -20,8 +24,14 @@ namespace MediaEscolar.Apresentacao
 
         private void Professor_Load(object sender, EventArgs e)
         {
-            Controle controle = new Controle();
+            controle = new Controle();
             controle.PreencherComboBox(cbxAlunos);
+        }
+
+
+        private void cbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
