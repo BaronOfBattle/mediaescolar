@@ -28,9 +28,3 @@ Como utilizar?
 <p> Você abrirá o executável, então poderá entrar em uma conta ou se cadastrar. </p>
   <p> A conta de professor é: matricula: 2023001 | senha: juraciprofessor </p>
    <p> Você poderá se cadastrar como aluno utilizando as seguintes matriculas: 2023002 até 20023020 (2023002, 2023003, 2023004...) </p>
-  
-
-<h2>
-Como utilizar?
-</h2>
-
