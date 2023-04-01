@@ -1,3 +1,4 @@
-﻿Properties/
-obj/
-SQL/
+﻿MediaEscolar/Properties/
+MediaEscolar/obj/
+MediaEscolar/SQL/
+.vs/MediaEscolar
