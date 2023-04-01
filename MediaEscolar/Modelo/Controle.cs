@@ -101,5 +101,30 @@ namespace MediaEscolar.Modelo
             return matricula;
         }
 
+        public void GetMediaMatricula(string matriculaAluno, out string Media1, out string Media2, out string Media3, out string Media4)
+        {
+            Conexao conexao = new Conexao();
+            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM tabela_medias WHERE matricula = @matricula", conexao.Conectar());
+            cmd.Parameters.AddWithValue("@matricula", matriculaAluno);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Media1 = dr.IsDBNull(0) ? "X" : dr["media_bim1"].ToString();
+                Media2 = dr.IsDBNull(1) ? "X" : dr["media_bim2"].ToString();
+                Media3 = dr.IsDBNull(2) ? "X" : dr["media_bim3"].ToString();
+                Media4 = dr.IsDBNull(3) ? "X" : dr["media_bim4"].ToString();
+            }
+            else
+            {
+                Media1 = "X";
+                Media2 = "X";
+                Media3 = "X";
+                Media4 = "X";
+            }
+
+            dr.Close();
+            conexao.Desconectar();
+        }
+
     }
 }

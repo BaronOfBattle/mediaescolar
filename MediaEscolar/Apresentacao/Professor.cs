@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MediaEscolar.Apresentacao
 {
@@ -26,6 +27,7 @@ namespace MediaEscolar.Apresentacao
         {
             controle = new Controle();
             controle.PreencherComboBox(cbxAlunos);
+            cbxAlunos.SelectedIndex = 0;
         }
 
 
@@ -34,20 +36,17 @@ namespace MediaEscolar.Apresentacao
             string nomeAluno = cbxAlunos.SelectedItem.ToString();
             string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
 
-            Conexao conexao = new Conexao();
-            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM tabela_medias WHERE matricula = @matricula", conexao.Conectar());
-            cmd.Parameters.AddWithValue("@matricula", matriculaAluno);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                lblMedia1.Text = dr.IsDBNull(0) ? "X" : dr["media_bim1"].ToString();
-                lblMedia2.Text = dr.IsDBNull(1) ? "X" : dr["media_bim2"].ToString();
-                lblMedia3.Text = dr.IsDBNull(2) ? "X" : dr["media_bim3"].ToString();
-                lblMedia4.Text = dr.IsDBNull(3) ? "X" : dr["media_bim4"].ToString();
-            }
+            controle.GetMediaMatricula(matriculaAluno, out string media1, out string media2, out string media3, out string media4);
 
-            dr.Close();
-            conexao.Desconectar();
+            lblMedia1.Text = media1;
+            lblMedia2.Text = media2;
+            lblMedia3.Text = media3;
+            lblMedia4.Text = media4;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

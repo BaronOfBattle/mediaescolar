@@ -34,11 +34,11 @@ namespace MediaEscolar.Apresentacao
             if (controle.tem)
             {
                 MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
                 MessageBox.Show(controle.mensagem);
-
             }
         }
 
