@@ -16,13 +16,12 @@ namespace MediaEscolar.Modelo
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
-        Cadastro cadastro = new Cadastro();
-
 
         public bool verificarLogin(String matricula, String senha)
         {
             // Verificar se o login existe no Banco de Dados
             cmd.CommandText = "select * from logins where matricula = @matricula and senha = @senha";
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@matricula", matricula);
             cmd.Parameters.AddWithValue("@senha", senha);
             try

@@ -126,5 +126,18 @@ namespace MediaEscolar.Modelo
             conexao.Desconectar();
         }
 
+        public void AtualizarMedia(string matriculaAluno, decimal media1, decimal media2, decimal media3, decimal media4)
+        {
+            Conexao conexao = new Conexao();
+            SqlCommand cmd = new SqlCommand("UPDATE tabela_medias SET media_bim1 = @media1, media_bim2 = @media2, media_bim3 = @media3, media_bim4 = @media4 WHERE matricula = @matriculaAluno", conexao.Conectar());
+            cmd.Parameters.AddWithValue("@media1", media1);
+            cmd.Parameters.AddWithValue("@media2", media2);
+            cmd.Parameters.AddWithValue("@media3", media3);
+            cmd.Parameters.AddWithValue("@media4", media4);
+            cmd.Parameters.AddWithValue("@matriculaAluno", matriculaAluno);
+            cmd.ExecuteNonQuery();
+            conexao.Desconectar();
+        }
+
     }
 }

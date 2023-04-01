@@ -28,6 +28,7 @@ namespace MediaEscolar.Apresentacao
             controle = new Controle();
             controle.PreencherComboBox(cbxAlunos);
             cbxAlunos.SelectedIndex = 0;
+
         }
 
 
@@ -42,9 +43,45 @@ namespace MediaEscolar.Apresentacao
             lblMedia2.Text = media2;
             lblMedia3.Text = media3;
             lblMedia4.Text = media4;
+
+            decimal.TryParse(media1, out decimal media1Decimal);
+            decimal.TryParse(media2, out decimal media2Decimal);
+            decimal.TryParse(media3, out decimal media3Decimal);
+            decimal.TryParse(media4, out decimal media4Decimal);
+
+            numMedia1.Value = media1Decimal;
+            numMedia2.Value = media2Decimal;
+            numMedia3.Value = media3Decimal;
+            numMedia4.Value = media4Decimal;
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            string nomeAluno = cbxAlunos.SelectedItem.ToString();
+            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+
+            decimal media1 = (decimal)numMedia1.Value;
+            decimal media2 = (decimal)numMedia2.Value;
+            decimal media3 = (decimal)numMedia3.Value;
+            decimal media4 = (decimal)numMedia4.Value;
+
+            controle.AtualizarMedia(matriculaAluno, media1, media2, media3, media4);
+            cbxAlunos_SelectedIndexChanged(sender, e);
+
+
+        }
+
+        private void txbMedia1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txbMedia2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

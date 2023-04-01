@@ -1,13 +1,5 @@
 ﻿using MediaEscolar.Modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Apresentacao
@@ -29,16 +21,16 @@ namespace MediaEscolar.Apresentacao
         {
             Controle controle = new Controle();
 
-            bool isProfessor = radProfessor.Checked; 
+            bool isProfessor = radProfessor.Checked;
             String mensagem = controle.cadastrar(txtMatricula.Text, txtSenha.Text, txtConfirmarSenha.Text,isProfessor);
             if (controle.tem)
             {
                 MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
             }
             else
             {
                 MessageBox.Show(controle.mensagem);
+
             }
         }
 

@@ -41,15 +41,20 @@ namespace MediaEscolar.Apresentacao
             this.lblMedia2 = new System.Windows.Forms.Label();
             this.lblMedia3 = new System.Windows.Forms.Label();
             this.lblMedia4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.numMedia1 = new System.Windows.Forms.NumericUpDown();
+            this.numMedia2 = new System.Windows.Forms.NumericUpDown();
+            this.numMedia3 = new System.Windows.Forms.NumericUpDown();
+            this.numMedia4 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia4)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxAlunos
             // 
+            this.cbxAlunos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAlunos.FormattingEnabled = true;
             this.cbxAlunos.Location = new System.Drawing.Point(150, 69);
             this.cbxAlunos.Name = "cbxAlunos";
@@ -157,34 +162,6 @@ namespace MediaEscolar.Apresentacao
             this.lblMedia4.TabIndex = 10;
             this.lblMedia4.Text = "X";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(34, 150);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(49, 20);
-            this.textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(150, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(49, 20);
-            this.textBox2.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(265, 150);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(49, 20);
-            this.textBox3.TabIndex = 13;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(363, 150);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(49, 20);
-            this.textBox4.TabIndex = 14;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,17 +173,94 @@ namespace MediaEscolar.Apresentacao
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // numMedia1
+            // 
+            this.numMedia1.DecimalPlaces = 1;
+            this.numMedia1.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numMedia1.Location = new System.Drawing.Point(45, 151);
+            this.numMedia1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMedia1.Name = "numMedia1";
+            this.numMedia1.ReadOnly = true;
+            this.numMedia1.Size = new System.Drawing.Size(40, 20);
+            this.numMedia1.TabIndex = 20;
+            this.numMedia1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // numMedia2
+            // 
+            this.numMedia2.DecimalPlaces = 1;
+            this.numMedia2.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numMedia2.Location = new System.Drawing.Point(159, 150);
+            this.numMedia2.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMedia2.Name = "numMedia2";
+            this.numMedia2.ReadOnly = true;
+            this.numMedia2.Size = new System.Drawing.Size(40, 20);
+            this.numMedia2.TabIndex = 21;
+            // 
+            // numMedia3
+            // 
+            this.numMedia3.DecimalPlaces = 1;
+            this.numMedia3.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numMedia3.Location = new System.Drawing.Point(270, 151);
+            this.numMedia3.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMedia3.Name = "numMedia3";
+            this.numMedia3.ReadOnly = true;
+            this.numMedia3.Size = new System.Drawing.Size(40, 20);
+            this.numMedia3.TabIndex = 22;
+            // 
+            // numMedia4
+            // 
+            this.numMedia4.DecimalPlaces = 1;
+            this.numMedia4.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numMedia4.Location = new System.Drawing.Point(371, 150);
+            this.numMedia4.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMedia4.Name = "numMedia4";
+            this.numMedia4.ReadOnly = true;
+            this.numMedia4.Size = new System.Drawing.Size(40, 20);
+            this.numMedia4.TabIndex = 23;
+            // 
             // Professor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(434, 244);
+            this.Controls.Add(this.numMedia4);
+            this.Controls.Add(this.numMedia3);
+            this.Controls.Add(this.numMedia2);
+            this.Controls.Add(this.numMedia1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblMedia4);
             this.Controls.Add(this.lblMedia3);
             this.Controls.Add(this.lblMedia2);
@@ -222,6 +276,10 @@ namespace MediaEscolar.Apresentacao
             this.Name = "Professor";
             this.Text = "Gerenciador de Notas";
             this.Load += new System.EventHandler(this.Professor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedia4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,10 +298,10 @@ namespace MediaEscolar.Apresentacao
         private System.Windows.Forms.Label lblMedia2;
         private System.Windows.Forms.Label lblMedia3;
         private System.Windows.Forms.Label lblMedia4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numMedia1;
+        private System.Windows.Forms.NumericUpDown numMedia2;
+        private System.Windows.Forms.NumericUpDown numMedia3;
+        private System.Windows.Forms.NumericUpDown numMedia4;
     }
 }
