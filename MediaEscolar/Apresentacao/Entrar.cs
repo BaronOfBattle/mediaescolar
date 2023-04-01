@@ -40,13 +40,10 @@ namespace MediaEscolar.Apresentacao
                     MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (tipoUsuario == 1)
                     {
-                        FormProfessor formProfessor = new FormProfessor(); 
-                        formProfessor.Show();
+
                     }
                     else
                     {
-                        BemVindo bv = new BemVindo(); 
-                        bv.Show();
                     }
                 }
                 else

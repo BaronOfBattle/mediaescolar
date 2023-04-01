@@ -33,7 +33,6 @@
             this.txbMatricula = new System.Windows.Forms.TextBox();
             this.txbSenha = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -82,29 +81,18 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(118, 103);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(53, 23);
-            this.btnSair.TabIndex = 5;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // Entrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(189, 142);
-            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.txbMatricula);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Entrar";
             this.Text = "Entrar";
             this.ResumeLayout(false);
@@ -119,6 +107,5 @@
         private System.Windows.Forms.TextBox txbMatricula;
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.Button btnSair;
     }
 }

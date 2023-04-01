@@ -12,7 +12,7 @@ namespace MediaEscolar.SQL
         SqlConnection con = new SqlConnection();
         public Conexao()
         {
-            con.ConnectionString = @"Data Source=WIN-C1HIGBR8GIT;Initial Catalog=cadastro;Integrated Security=True";
+            con.ConnectionString = @"Data Source=harrisong.database.windows.net;Initial Catalog=escolajuraci;Persist Security Info=True;User ID=juraciteles;Password=Escolajuraci1@";
         }
         public SqlConnection Conectar()
         {

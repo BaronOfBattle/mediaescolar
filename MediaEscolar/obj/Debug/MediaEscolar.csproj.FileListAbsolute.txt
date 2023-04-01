@@ -11,3 +11,16 @@ D:\github\CShape\WindowsForms\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.e
 D:\github\CShape\WindowsForms\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.pdb
 D:\github\CShape\WindowsForms\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Apresentacao.Cadastro.resources
 D:\github\CShape\WindowsForms\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Apresentacao.Entrar.resources
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.csproj.AssemblyReference.cache
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.csproj.SuggestedBindingRedirects.cache
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Apresentacao.Cadastro.resources
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Apresentacao.Entrar.resources
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Form1.resources
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Properties.Resources.resources
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.csproj.GenerateResource.cache
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.csproj.CoreCompileInputs.cache
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.exe
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.pdb
+D:\github\MediaEscolar\MediaEscolar\bin\Debug\MediaEscolar.exe.config
+D:\github\MediaEscolar\MediaEscolar\bin\Debug\MediaEscolar.exe
+D:\github\MediaEscolar\MediaEscolar\bin\Debug\MediaEscolar.pdb
