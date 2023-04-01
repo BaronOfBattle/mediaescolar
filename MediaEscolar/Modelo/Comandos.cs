@@ -1,4 +1,5 @@
-﻿using MediaEscolar.SQL;
+﻿using MediaEscolar.Apresentacao;
+using MediaEscolar.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -15,6 +16,7 @@ namespace MediaEscolar.Modelo
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
+        Cadastro cadastro = new Cadastro();
 
 
         public bool verificarLogin(String matricula, String senha)
@@ -45,6 +47,24 @@ namespace MediaEscolar.Modelo
         {
             tem = false;
             int tipoUsuario = isProfessor ? 1 : 0; // 1 para professor, 0 para aluno
+
+
+            // Verificar se o usuário preencheu corretamente
+
+            if (string.IsNullOrEmpty(matricula))
+            {
+                return "Por favor, informe a sua matrícula.";
+            }
+
+            if (string.IsNullOrEmpty(senha))
+            {
+                return "Por favor, informe a sua senha.";
+            }
+
+            if (string.IsNullOrEmpty(confirmarSenha))
+            {
+                return "Por favor, confirme a sua senha.";
+            }
 
             // Verificar se o usuário já está cadastrado no banco de dados
             string query = "SELECT COUNT(*) FROM logins WHERE matricula = @matricula AND tipo = @tipoUsuario";
@@ -79,20 +99,6 @@ namespace MediaEscolar.Modelo
                     }
                 }
 
-                if (string.IsNullOrEmpty(matricula))
-                {
-                    return "Por favor, informe a sua matrícula.";
-                }
-
-                if (string.IsNullOrEmpty(senha))
-                {
-                    return "Por favor, informe a sua senha.";
-                }
-
-                if (string.IsNullOrEmpty(confirmarSenha))
-                {
-                    return "Por favor, confirme a sua senha.";
-                }
 
                 // Atualizar senha do usuário no banco de dados
                 if (senha == confirmarSenha)

@@ -95,6 +95,7 @@
             // radAluno
             // 
             this.radAluno.AutoSize = true;
+            this.radAluno.Checked = true;
             this.radAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radAluno.Location = new System.Drawing.Point(26, 220);
             this.radAluno.Name = "radAluno";
@@ -103,6 +104,7 @@
             this.radAluno.TabStop = true;
             this.radAluno.Text = "Aluno";
             this.radAluno.UseVisualStyleBackColor = true;
+            this.radAluno.CheckedChanged += new System.EventHandler(this.radAluno_CheckedChanged);
             // 
             // radProfessor
             // 
@@ -115,6 +117,7 @@
             this.radProfessor.TabStop = true;
             this.radProfessor.Text = "Professor";
             this.radProfessor.UseVisualStyleBackColor = true;
+            this.radProfessor.CheckedChanged += new System.EventHandler(this.radProfessor_CheckedChanged);
             // 
             // txtSenha
             // 
@@ -184,11 +187,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radAluno;
-        private System.Windows.Forms.RadioButton radProfessor;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtConfirmarSenha;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Button btnFinalizarCadastro;
+        public System.Windows.Forms.RadioButton radAluno;
+        public System.Windows.Forms.RadioButton radProfessor;
     }
 }
