@@ -1,4 +1,5 @@
-﻿using MediaEscolar.SQL;
+﻿using MediaEscolar.Apresentacao;
+using MediaEscolar.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MediaEscolar.Modelo
 {
@@ -62,6 +64,26 @@ namespace MediaEscolar.Modelo
 
             return tipo;
         }
+
+        public void PreencherComboBox(ComboBox cbxAlunos)
+        {
+            Conexao conexao = new Conexao();
+            SqlConnection con = conexao.Conectar();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            string query = "SELECT nome FROM logins WHERE tipo = 0";
+            cmd.CommandText = query;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                cbxAlunos.Items.Add(reader["nome"].ToString());
+            }
+
+            reader.Close();
+            conexao.Desconectar();
+        }
+
 
 
     }

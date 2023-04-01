@@ -62,7 +62,9 @@ namespace MediaEscolar.Apresentacao
                     MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (tipoUsuario == 1)
                     {
-
+                        Professor professor = new Professor();
+                        professor.Show();
+                        this.Close();
                     }
                     else
                     {
