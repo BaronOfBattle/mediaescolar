@@ -8,7 +8,7 @@
   <a href="https://github.com/harrisongoncalves">
     <img alt="Made by Harrison Gonçalves" src="https://img.shields.io/badge/made%20by-Harrison%20Gonçalves-brightgreen">
   </a>
-<img alt="Last Commit" src="https://img.shields.io/github/last-commit/harrisongoncalves/conversordemoedas">
+<img alt="Last Commit" src="https://img.shields.io/github/last-commit/harrisongoncalves/MediaEscolar">
 
 </p>
 
@@ -16,8 +16,8 @@
     <img src="https://i.ibb.co/GFf3w9k/1.png" alt="1" border="0" width="274" height="239" style="margin-right:5px;">
     <img src="https://i.ibb.co/j4L3L1s/2.png" alt="2" border="0" width="242" height="332" style="margin-right:5px;">
     <img src="https://i.ibb.co/h7rnbLw/3.png" alt="3" border="0" width="190" height="143" style="margin-right:5px;">
-    <img src="https://i.ibb.co/YXpLprZ/1.png" alt="5" border="0" width="455" height="160" style="margin-right:5px;">
-  <img src="https://i.ibb.co/0cPrwnn/1.png" alt="5" border="0" width="432" height="271">
+    <img src="https://i.ibb.co/YXpLprZ/1.png" alt="4" border="0" width="455" height="160" style="margin-right:5px;">
+  <img src="https://i.ibb.co/vYwSGSN/5.png" alt="5" border="0" width="434" height="275">
 </div>
   
   
@@ -25,6 +25,6 @@
 Como utilizar?
 </h2>
   
-<p> Você abrirá o executável, então poderá entrar em uma conta ou se cadastrar. </p>
+<p> Você pode utilizar o programa apenas baixando-o e executando o MediaEscolar.exe. O banco de dados está hospedado na Azure. Utilize uma das matrículas abaixo para pode entrar ou se cadastrar. </p>
   <p> A conta de professor é: matricula: 2023001 | senha: juraciprofessor </p>
    <p> Você poderá se cadastrar como aluno utilizando as seguintes matriculas: 2023002 até 20023020 (2023002, 2023003, 2023004...) </p>
