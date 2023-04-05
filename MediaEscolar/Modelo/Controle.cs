@@ -1,12 +1,7 @@
-﻿using MediaEscolar.Apresentacao;
-using MediaEscolar.SQL;
+﻿using MediaEscolar.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Modelo
@@ -65,12 +60,18 @@ namespace MediaEscolar.Modelo
             return tipo;
         }
 
-        public void PreencherComboBox(ComboBox cbxAunos)
+        public void PreencherComboBoxAlunos(ComboBox cbxAlunos, ComboBox cbxTurmas)
         {
+            if (cbxTurmas.SelectedItem == null)
+            {
+                return;
+            }
             Conexao conexao = new Conexao();
             SqlConnection con = conexao.Conectar();
             SqlCommand cmd = new SqlCommand();
-            string query = "SELECT nome FROM logins WHERE tipo = 0";
+            string turmaSelecionada = cbxTurmas.SelectedItem.ToString();
+            string query = "SELECT nome FROM logins WHERE tipo = 0 AND turma = @turma";
+            cmd.Parameters.AddWithValue("@turma", turmaSelecionada);
             cmd.Connection = con;
             cmd.CommandText = query;
 
@@ -78,7 +79,35 @@ namespace MediaEscolar.Modelo
 
             while (reader.Read())
             {
-                cbxAunos.Items.Add(reader["nome"].ToString());
+                cbxAlunos.Items.Add(reader["nome"].ToString());
+            }
+
+            reader.Close();
+            conexao.Desconectar();
+        }
+
+
+        public void PreencherComboBoxTurmas(ComboBox cbxTurmas)
+        {
+            Conexao conexao = new Conexao();
+            SqlConnection con = conexao.Conectar();
+            SqlCommand cmd = new SqlCommand();
+            string query = "SELECT turma FROM logins WHERE tipo = 0";
+            cmd.Connection = con;
+            cmd.CommandText = query;
+
+            HashSet<string> turmas = new HashSet<string>(); // criar um HashSet para armazenar as turmas únicas
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string turma = reader["turma"].ToString();
+                if (!turmas.Contains(turma)) // verificar se a turma já foi adicionada antes
+                {
+                    cbxTurmas.Items.Add(turma);
+                    turmas.Add(turma); // adicionar a turma ao HashSet
+                }
             }
 
             reader.Close();
@@ -139,5 +168,53 @@ namespace MediaEscolar.Modelo
             conexao.Desconectar();
         }
 
+        public void ResetarMedia(string matriculaAluno, string media)
+        {
+            Conexao conexao = new Conexao();
+            SqlCommand cmd = new SqlCommand($"UPDATE tabela_medias SET {media} = NULL WHERE matricula = @matriculaAluno", conexao.Conectar());
+            cmd.Parameters.AddWithValue("@matriculaAluno", matriculaAluno);
+            cmd.ExecuteNonQuery();
+            conexao.Desconectar();
+        }
+
+        public bool TodasNotasPreenchidas(Label lblMedia1, Label lblMedia2, Label lblMedia3, Label lblMedia4)
+        {
+            double media1, media2, media3, media4;
+
+            if (string.IsNullOrEmpty(lblMedia1.Text) || !double.TryParse(lblMedia1.Text, out media1) ||
+                string.IsNullOrEmpty(lblMedia2.Text) || !double.TryParse(lblMedia2.Text, out media2) ||
+                string.IsNullOrEmpty(lblMedia3.Text) || !double.TryParse(lblMedia3.Text, out media3) ||
+                string.IsNullOrEmpty(lblMedia4.Text) || !double.TryParse(lblMedia4.Text, out media4))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public void PreencherMediasAluno(string matriculaUsuario, Label lblMedia1, Label lblMedia2, Label lblMedia3, Label lblMedia4)
+        {
+            Conexao conexao = new Conexao();
+            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM tabela_medias WHERE matricula = @matricula", conexao.Conectar());
+            cmd.Parameters.AddWithValue("@matricula", matriculaUsuario);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                lblMedia1.Text = dr.IsDBNull(0) ? "X" : dr["media_bim1"].ToString();
+                lblMedia2.Text = dr.IsDBNull(1) ? "X" : dr["media_bim2"].ToString();
+                lblMedia3.Text = dr.IsDBNull(2) ? "X" : dr["media_bim3"].ToString();
+                lblMedia4.Text = dr.IsDBNull(3) ? "X" : dr["media_bim4"].ToString();
+            }
+            else
+            {
+                lblMedia1.Text = "X";
+                lblMedia2.Text = "X";
+                lblMedia3.Text = "X";
+                lblMedia4.Text = "X";
+            }
+
+            dr.Close();
+            conexao.Desconectar();
+        }
     }
 }

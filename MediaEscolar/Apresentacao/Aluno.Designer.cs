@@ -40,6 +40,7 @@
             this.lblMedia3 = new System.Windows.Forms.Label();
             this.lblMedia4 = new System.Windows.Forms.Label();
             this.lblMatricula = new System.Windows.Forms.Label();
+            this.lblAprovado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,40 +77,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Code Pro Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 18);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "1º Bimestre";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Code Pro Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(121, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 18);
+            this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "2º Bimestre";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Code Pro Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(237, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 18);
+            this.label5.Size = new System.Drawing.Size(91, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "3º Bimestre";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Code Pro Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(350, 82);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 18);
+            this.label6.Size = new System.Drawing.Size(91, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "4º Bimestre";
             // 
@@ -117,7 +118,7 @@
             // 
             this.lblMedia1.AutoSize = true;
             this.lblMedia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedia1.Location = new System.Drawing.Point(46, 100);
+            this.lblMedia1.Location = new System.Drawing.Point(46, 102);
             this.lblMedia1.Name = "lblMedia1";
             this.lblMedia1.Size = new System.Drawing.Size(16, 20);
             this.lblMedia1.TabIndex = 7;
@@ -127,7 +128,7 @@
             // 
             this.lblMedia2.AutoSize = true;
             this.lblMedia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedia2.Location = new System.Drawing.Point(164, 100);
+            this.lblMedia2.Location = new System.Drawing.Point(164, 102);
             this.lblMedia2.Name = "lblMedia2";
             this.lblMedia2.Size = new System.Drawing.Size(16, 20);
             this.lblMedia2.TabIndex = 8;
@@ -137,7 +138,7 @@
             // 
             this.lblMedia3.AutoSize = true;
             this.lblMedia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedia3.Location = new System.Drawing.Point(278, 100);
+            this.lblMedia3.Location = new System.Drawing.Point(278, 102);
             this.lblMedia3.Name = "lblMedia3";
             this.lblMedia3.Size = new System.Drawing.Size(16, 20);
             this.lblMedia3.TabIndex = 9;
@@ -147,7 +148,7 @@
             // 
             this.lblMedia4.AutoSize = true;
             this.lblMedia4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedia4.Location = new System.Drawing.Point(394, 100);
+            this.lblMedia4.Location = new System.Drawing.Point(394, 102);
             this.lblMedia4.Name = "lblMedia4";
             this.lblMedia4.Size = new System.Drawing.Size(16, 20);
             this.lblMedia4.TabIndex = 10;
@@ -163,12 +164,24 @@
             this.lblMatricula.TabIndex = 11;
             this.lblMatricula.Text = "Matricula";
             // 
+            // lblAprovado
+            // 
+            this.lblAprovado.AutoSize = true;
+            this.lblAprovado.Font = new System.Drawing.Font("Code Pro Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAprovado.Location = new System.Drawing.Point(168, 131);
+            this.lblAprovado.Name = "lblAprovado";
+            this.lblAprovado.Size = new System.Drawing.Size(114, 23);
+            this.lblAprovado.TabIndex = 12;
+            this.lblAprovado.Text = "APROVADO";
+            this.lblAprovado.Visible = false;
+            // 
             // Aluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(452, 130);
+            this.ClientSize = new System.Drawing.Size(442, 162);
+            this.Controls.Add(this.lblAprovado);
             this.Controls.Add(this.lblMatricula);
             this.Controls.Add(this.lblMedia4);
             this.Controls.Add(this.lblMedia3);
@@ -204,5 +217,6 @@
         private System.Windows.Forms.Label lblMedia3;
         private System.Windows.Forms.Label lblMedia4;
         private System.Windows.Forms.Label lblMatricula;
+        private System.Windows.Forms.Label lblAprovado;
     }
 }

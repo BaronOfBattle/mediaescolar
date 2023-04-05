@@ -1,11 +1,6 @@
-﻿using MediaEscolar.Apresentacao;
-using MediaEscolar.SQL;
+﻿using MediaEscolar.SQL;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaEscolar.Modelo
 {

@@ -1,14 +1,5 @@
 ﻿using MediaEscolar.Modelo;
-using MediaEscolar.SQL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Apresentacao
@@ -34,20 +25,30 @@ namespace MediaEscolar.Apresentacao
         private void Aluno_Load(object sender, EventArgs e)
         {
             string matriculaUsuario = controle.matriculaUsuario;
+            controle.PreencherMediasAluno(matriculaUsuario, lblMedia1, lblMedia2, lblMedia3, lblMedia4);
 
-            Conexao conexao = new Conexao();
-            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM tabela_medias WHERE matricula = @matricula", conexao.Conectar());
-            cmd.Parameters.AddWithValue("@matricula", matriculaUsuario);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            double nota1, nota2, nota3, nota4;
+            if (!double.TryParse(lblMedia1.Text, out nota1) || !double.TryParse(lblMedia2.Text, out nota2) ||
+                !double.TryParse(lblMedia3.Text, out nota3) || !double.TryParse(lblMedia4.Text, out nota4))
             {
-                lblMedia1.Text = dr["media_bim1"].ToString();
-                lblMedia2.Text = dr["media_bim2"].ToString();
-                lblMedia3.Text = dr["media_bim3"].ToString();
-                lblMedia4.Text = dr["media_bim4"].ToString();
+                // Alguma nota é inválida
+                lblAprovado.Visible = false;
             }
-            dr.Close();
-            conexao.Desconectar();
+            else
+            {
+                // Todas as notas são válidas, calcular a média
+                double media = (nota1 + nota2 + nota3 + nota4) / 4;
+                if (media >= 6)
+                {
+                    lblAprovado.Text = "Aprovado";
+                    lblAprovado.Visible = true;
+                }
+                else
+                {
+                    lblAprovado.Text = "Reprovado";
+                    lblAprovado.Visible = true;
+                }
+            }
         }
     }
 }

@@ -1,16 +1,6 @@
 ﻿using MediaEscolar.Modelo;
-using MediaEscolar.SQL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MediaEscolar.Apresentacao
 {
@@ -26,9 +16,8 @@ namespace MediaEscolar.Apresentacao
         private void Professor_Load(object sender, EventArgs e)
         {
             controle = new Controle();
-            controle.PreencherComboBox(cbxAlunos);
-            cbxAlunos.SelectedIndex = 0;
-
+            controle.PreencherComboBoxTurmas(cbxTurmas);
+            cbxTurmas.SelectedIndex = 0;
         }
 
 
@@ -84,6 +73,50 @@ namespace MediaEscolar.Apresentacao
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void numMedia3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnX1_Click(object sender, EventArgs e)
+        {
+            string nomeAluno = cbxAlunos.SelectedItem.ToString();
+            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+            controle.ResetarMedia(matriculaAluno, "media_bim1");
+            cbxAlunos_SelectedIndexChanged(sender, e);
+        }
+
+        private void btnX2_Click(object sender, EventArgs e)
+        {
+            string nomeAluno = cbxAlunos.SelectedItem.ToString();
+            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+            controle.ResetarMedia(matriculaAluno, "media_bim2");
+            cbxAlunos_SelectedIndexChanged(sender, e);
+        }
+
+        private void btnX3_Click(object sender, EventArgs e)
+        {
+            string nomeAluno = cbxAlunos.SelectedItem.ToString();
+            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+            controle.ResetarMedia(matriculaAluno, "media_bim3");
+            cbxAlunos_SelectedIndexChanged(sender, e);
+        }
+
+        private void btnX4_Click(object sender, EventArgs e)
+        {
+            string nomeAluno = cbxAlunos.SelectedItem.ToString();
+            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+            controle.ResetarMedia(matriculaAluno, "media_bim4");
+            cbxAlunos_SelectedIndexChanged(sender, e);
+        }
+
+        private void cbxTurmas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxAlunos.Items.Clear();
+            controle.PreencherComboBoxAlunos(cbxAlunos, cbxTurmas);
+            cbxAlunos.SelectedIndex = 0;
         }
     }
 }

@@ -1,15 +1,7 @@
 ﻿using MediaEscolar.Modelo;
 using MediaEscolar.SQL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Apresentacao
@@ -37,15 +29,21 @@ namespace MediaEscolar.Apresentacao
             Conexao con = new Conexao();
             controle.acessar(txbMatricula.Text, txbSenha.Text);
             int tipoUsuario = controle.getTipoUsuario(txbMatricula.Text);
+
+            if (!int.TryParse(txbMatricula.Text, out int matricula))
+            {
+                MessageBox.Show("Digite uma matrícula válida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             SqlCommand cmd = new SqlCommand();
             string query = "SELECT nome,matricula FROM logins WHERE matricula = @matricula";
-            cmd.Parameters.AddWithValue("@matricula", txbMatricula.Text);
+            cmd.Parameters.AddWithValue("@matricula", matricula);
             cmd.CommandText = query;
             cmd.Connection = con.Conectar();
             con.Conectar();
 
             SqlDataReader reader = cmd.ExecuteReader();
-
             if (reader.Read())
             {
                 controle.nomeUsuario = reader["nome"].ToString();
@@ -82,6 +80,11 @@ namespace MediaEscolar.Apresentacao
             {
                 MessageBox.Show(controle.mensagem);
             }
+        }
+
+        private void Entrar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
