@@ -52,5 +52,5 @@ Atualizações futuras:
 <ul>
   <li><del>Adicionar as turmas em que o professor dá aula para facilitar a atribuição de notas;</del><span class="green-emoji">&#9989;</span> v1.1</li>
   <li><del>Caso o aluno tenha recebido todas as médias, informar se o aluno foi aprovado/reprovado.</del><span class="green-emoji">&#9989;</span> v1.1</li>
-  <li>Adicionar uma parte onde a Secretária da escola possar adicionar novos alunos.</li>
+  <li>Adicionar uma conta específica para que a secretaria da escola possa adicionar alunos novos.</li>
 </ul>
