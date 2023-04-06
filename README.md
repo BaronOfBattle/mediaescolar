@@ -26,9 +26,9 @@ Como utilizar?
 </h2>
   
 <p>Para utilizar o Média Escolar, basta baixar e executar o programa no sistema operacional Windows. O banco de dados do programa está hospedado na Azure, o que significa que você não precisa criar um banco de dados em seu computador. É importante lembrar que o aplicativo se trata de uma simulação de um aplicativo escolar e que as matrículas utilizadas deverão existir no banco de dados da escola. Por conta disso, ao utilizar o programa, utilize apenas as matrículas já preexistentes, As matrículas disponíveis para cadastro como aluno são:</p>
-  <p>Matrículas: 2023002, 2023003, 2023004, ..., 2023019, 2023020. </p>
+  <p>Matrículas: 2023004, 2023005, 2023006, ..., 2023022, 2023023. </p>
   <p>Caso queira acessar o programa como professor, utilize a seguinte matrícula:</p>
-  <p>Matrícula: 2023001 | Senha: juraciprofessor</p>
+  <p>Matrícula: 2023003 ou 2023031 | Senha: juraciprofessor</p>
   
   
 <h2>
