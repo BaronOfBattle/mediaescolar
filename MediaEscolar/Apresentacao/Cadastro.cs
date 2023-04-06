@@ -22,7 +22,7 @@ namespace MediaEscolar.Apresentacao
             Controle controle = new Controle();
 
             bool isProfessor = radProfessor.Checked;
-            String mensagem = controle.cadastrar(txtMatricula.Text, txtSenha.Text, txtConfirmarSenha.Text,isProfessor);
+            String mensagem = controle.Cadastrar(txtMatricula.Text, txtSenha.Text, txtConfirmarSenha.Text,isProfessor);
             if (controle.tem)
             {
                 MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);

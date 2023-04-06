@@ -13,11 +13,11 @@ namespace MediaEscolar.Modelo
         public String nomeUsuario = "";
         public String matriculaUsuario = "";
 
-        public bool acessar(String matricula, String senha)
+        public bool EntrarNaConta(String matricula, String senha)
         {
             Comandos comando = new Comandos();
 
-            tem = comando.verificarLogin(matricula, senha);
+            tem = comando.VerificarLogin(matricula, senha);
             if (!comando.mensagem.Equals(""))
             {
                 this.mensagem = comando.mensagem;
@@ -25,10 +25,10 @@ namespace MediaEscolar.Modelo
             return tem;
         }
 
-        public String cadastrar(String matricula, String senha, String confirmarSenha, bool isProfessor)
+        public string CadastrarAluno(string nome, bool isProfessor, string turmaUsuario)
         {
             Comandos comando = new Comandos();
-            this.mensagem = comando.cadastrar(matricula, senha, confirmarSenha, isProfessor);
+            this.mensagem = comando.CadastrarAluno(nome, isProfessor, turmaUsuario);
             if (comando.tem)
             {
                 return mensagem;
@@ -36,7 +36,19 @@ namespace MediaEscolar.Modelo
             this.tem = true;
             return mensagem;
         }
-        public int getTipoUsuario(string matricula)
+
+        public String Cadastrar(String matricula, String senha, String confirmarSenha, bool isProfessor)
+        {
+            Comandos comando = new Comandos();
+            this.mensagem = comando.Cadastrar(matricula, senha, confirmarSenha, isProfessor);
+            if (comando.tem)
+            {
+                return mensagem;
+            }
+            this.tem = true;
+            return mensagem;
+        }
+        public int TipoUsuario(string matricula)
         {
             int tipo = -1;
             Conexao conexao = new Conexao();
@@ -92,21 +104,20 @@ namespace MediaEscolar.Modelo
             Conexao conexao = new Conexao();
             SqlConnection con = conexao.Conectar();
             SqlCommand cmd = new SqlCommand();
-            string query = "SELECT turma FROM logins WHERE tipo = 0";
             cmd.Connection = con;
-            cmd.CommandText = query;
+            cmd.CommandText = "SELECT turma FROM logins WHERE tipo = 0";
 
-            HashSet<string> turmas = new HashSet<string>(); // criar um HashSet para armazenar as turmas únicas
+            HashSet<string> turmas = new HashSet<string>();
 
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
                 string turma = reader["turma"].ToString();
-                if (!turmas.Contains(turma)) // verificar se a turma já foi adicionada antes
+                if (!turmas.Contains(turma)) 
                 {
                     cbxTurmas.Items.Add(turma);
-                    turmas.Add(turma); // adicionar a turma ao HashSet
+                    turmas.Add(turma);
                 }
             }
 
@@ -133,7 +144,7 @@ namespace MediaEscolar.Modelo
         public void GetMediaMatricula(string matriculaAluno, out string Media1, out string Media2, out string Media3, out string Media4)
         {
             Conexao conexao = new Conexao();
-            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM tabela_medias WHERE matricula = @matricula", conexao.Conectar());
+            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM medias WHERE matricula = @matricula", conexao.Conectar());
             cmd.Parameters.AddWithValue("@matricula", matriculaAluno);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
@@ -158,7 +169,7 @@ namespace MediaEscolar.Modelo
         public void AtualizarMedia(string matriculaAluno, decimal media1, decimal media2, decimal media3, decimal media4)
         {
             Conexao conexao = new Conexao();
-            SqlCommand cmd = new SqlCommand("UPDATE tabela_medias SET media_bim1 = @media1, media_bim2 = @media2, media_bim3 = @media3, media_bim4 = @media4 WHERE matricula = @matriculaAluno", conexao.Conectar());
+            SqlCommand cmd = new SqlCommand("UPDATE medias SET media_bim1 = @media1, media_bim2 = @media2, media_bim3 = @media3, media_bim4 = @media4 WHERE matricula = @matriculaAluno", conexao.Conectar());
             cmd.Parameters.AddWithValue("@media1", media1);
             cmd.Parameters.AddWithValue("@media2", media2);
             cmd.Parameters.AddWithValue("@media3", media3);
@@ -171,31 +182,16 @@ namespace MediaEscolar.Modelo
         public void ResetarMedia(string matriculaAluno, string media)
         {
             Conexao conexao = new Conexao();
-            SqlCommand cmd = new SqlCommand($"UPDATE tabela_medias SET {media} = NULL WHERE matricula = @matriculaAluno", conexao.Conectar());
+            SqlCommand cmd = new SqlCommand($"UPDATE medias SET {media} = NULL WHERE matricula = @matriculaAluno", conexao.Conectar());
             cmd.Parameters.AddWithValue("@matriculaAluno", matriculaAluno);
             cmd.ExecuteNonQuery();
             conexao.Desconectar();
         }
 
-        public bool TodasNotasPreenchidas(Label lblMedia1, Label lblMedia2, Label lblMedia3, Label lblMedia4)
-        {
-            double media1, media2, media3, media4;
-
-            if (string.IsNullOrEmpty(lblMedia1.Text) || !double.TryParse(lblMedia1.Text, out media1) ||
-                string.IsNullOrEmpty(lblMedia2.Text) || !double.TryParse(lblMedia2.Text, out media2) ||
-                string.IsNullOrEmpty(lblMedia3.Text) || !double.TryParse(lblMedia3.Text, out media3) ||
-                string.IsNullOrEmpty(lblMedia4.Text) || !double.TryParse(lblMedia4.Text, out media4))
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         public void PreencherMediasAluno(string matriculaUsuario, Label lblMedia1, Label lblMedia2, Label lblMedia3, Label lblMedia4)
         {
             Conexao conexao = new Conexao();
-            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM tabela_medias WHERE matricula = @matricula", conexao.Conectar());
+            SqlCommand cmd = new SqlCommand("SELECT media_bim1, media_bim2, media_bim3, media_bim4 FROM medias WHERE matricula = @matricula", conexao.Conectar());
             cmd.Parameters.AddWithValue("@matricula", matriculaUsuario);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())

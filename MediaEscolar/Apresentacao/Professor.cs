@@ -23,8 +23,7 @@ namespace MediaEscolar.Apresentacao
 
         private void cbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string nomeAluno = cbxAlunos.SelectedItem.ToString();
-            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+            string matriculaAluno = controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString());
 
             controle.GetMediaMatricula(matriculaAluno, out string media1, out string media2, out string media3, out string media4);
 
@@ -46,15 +45,12 @@ namespace MediaEscolar.Apresentacao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nomeAluno = cbxAlunos.SelectedItem.ToString();
-            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
+            decimal media1 = numMedia1.Value;
+            decimal media2 = numMedia2.Value;
+            decimal media3 = numMedia3.Value;
+            decimal media4 = numMedia4.Value;
 
-            decimal media1 = (decimal)numMedia1.Value;
-            decimal media2 = (decimal)numMedia2.Value;
-            decimal media3 = (decimal)numMedia3.Value;
-            decimal media4 = (decimal)numMedia4.Value;
-
-            controle.AtualizarMedia(matriculaAluno, media1, media2, media3, media4);
+            controle.AtualizarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), media1, media2, media3, media4);
             cbxAlunos_SelectedIndexChanged(sender, e);
 
 
@@ -82,33 +78,25 @@ namespace MediaEscolar.Apresentacao
 
         private void btnX1_Click(object sender, EventArgs e)
         {
-            string nomeAluno = cbxAlunos.SelectedItem.ToString();
-            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
-            controle.ResetarMedia(matriculaAluno, "media_bim1");
+            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim1");
             cbxAlunos_SelectedIndexChanged(sender, e);
         }
 
         private void btnX2_Click(object sender, EventArgs e)
         {
-            string nomeAluno = cbxAlunos.SelectedItem.ToString();
-            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
-            controle.ResetarMedia(matriculaAluno, "media_bim2");
+            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim2");
             cbxAlunos_SelectedIndexChanged(sender, e);
         }
 
         private void btnX3_Click(object sender, EventArgs e)
         {
-            string nomeAluno = cbxAlunos.SelectedItem.ToString();
-            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
-            controle.ResetarMedia(matriculaAluno, "media_bim3");
+            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim3");
             cbxAlunos_SelectedIndexChanged(sender, e);
         }
 
         private void btnX4_Click(object sender, EventArgs e)
         {
-            string nomeAluno = cbxAlunos.SelectedItem.ToString();
-            string matriculaAluno = controle.GetMatriculaAluno(nomeAluno);
-            controle.ResetarMedia(matriculaAluno, "media_bim4");
+            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim4");
             cbxAlunos_SelectedIndexChanged(sender, e);
         }
 

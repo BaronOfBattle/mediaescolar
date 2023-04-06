@@ -27,8 +27,8 @@ namespace MediaEscolar.Apresentacao
         {
             Controle controle = new Controle();
             Conexao con = new Conexao();
-            controle.acessar(txbMatricula.Text, txbSenha.Text);
-            int tipoUsuario = controle.getTipoUsuario(txbMatricula.Text);
+            controle.EntrarNaConta(txbMatricula.Text, txbSenha.Text);
+            int tipoUsuario = controle.TipoUsuario(txbMatricula.Text);
 
             if (!int.TryParse(txbMatricula.Text, out int matricula))
             {
@@ -62,6 +62,12 @@ namespace MediaEscolar.Apresentacao
                     {
                         Professor professor = new Professor();
                         professor.Show();
+                        this.Close();
+                    }
+                    else if (tipoUsuario == 2)
+                    {
+                        Secretaria.Secretaria secretaria = new  Secretaria.Secretaria();
+                        secretaria.Show();
                         this.Close();
                     }
                     else
