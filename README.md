@@ -12,12 +12,13 @@
 
 </p>
 
-<div style="display:flex;">
-    <img src="https://i.ibb.co/GFf3w9k/1.png" alt="1" border="0" width="274" height="239" style="margin-right:5px;">
-    <img src="https://i.ibb.co/j4L3L1s/2.png" alt="2" border="0" width="242" height="332" style="margin-right:5px;">
-    <img src="https://i.ibb.co/h7rnbLw/3.png" alt="3" border="0" width="190" height="143" style="margin-right:5px;">
-    <img src="https://i.ibb.co/c2JZd7x/notas-Aluno.png" alt="4" border="0" width="444" height="193" style="margin-right:5px;">
-  <img src="https://i.ibb.co/YNmhMr7/notas-Professor.png" alt="5" border="0" width="433" height="294">
+<div>
+    <img src="https://i.ibb.co/GFf3w9k/1.png" alt="1" border="0" width="274" height="239" style="margin-right:1px;">
+    <img src="https://i.ibb.co/j4L3L1s/2.png" alt="2" border="0" width="242" height="332" style="margin-right:1px;">
+    <img src="https://i.ibb.co/h7rnbLw/3.png" alt="3" border="0" width="190" height="143" style="margin-right:1px;">
+    <img src="https://i.ibb.co/YNmhMr7/notas-Professor.png" alt="4" border="0" width="433" height="294">
+    <img src="https://i.ibb.co/c2JZd7x/notas-Aluno.png" alt="5" border="0" width="444" height="193">
+    <img src="https://i.ibb.co/yq77PYK/Secretaria-Cadastro.png" alt="6" border="0" width="424" height="264">
 </div>
   
   
@@ -29,6 +30,8 @@ Como utilizar?
   <p>Matrículas: 2023004, 2023005, 2023006, ..., 2023022, 2023023. </p>
   <p>Caso queira acessar o programa como professor, utilize a seguinte matrícula:</p>
   <p>Matrícula: 2023003 ou 2023031 | Senha: juraciprofessor</p>
+  <p>Para adicionar novos alunos, utilize a conta da secretaria:</p>
+  <p>Matrícula: 2023030 | Senha: admin</p>
   
   
 <h2>
@@ -52,5 +55,5 @@ Atualizações futuras:
 <ul>
   <li><del>Adicionar as turmas em que o professor dá aula para facilitar a atribuição de notas;</del><span class="green-emoji">&#9989;</span> v1.1</li>
   <li><del>Caso o aluno tenha recebido todas as médias, informar se o aluno foi aprovado/reprovado.</del><span class="green-emoji">&#9989;</span> v1.1</li>
-  <li>Adicionar uma conta específica para que a secretaria da escola possa adicionar alunos novos.</li>
+  <li><del>Adicionar uma conta específica para que a secretaria da escola possa adicionar alunos novos.</del><span class="green-emoji">&#9989;</span> v1.2 </li>
 </ul>
