@@ -1,5 +1,6 @@
 ﻿using MediaEscolar.Modelo;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Apresentacao
@@ -84,8 +85,6 @@ namespace MediaEscolar.Apresentacao
 
         private void btnX2_Click(object sender, EventArgs e)
         {
-            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim2");
-            cbxAlunos_SelectedIndexChanged(sender, e);
         }
 
         private void btnX3_Click(object sender, EventArgs e)
@@ -96,8 +95,7 @@ namespace MediaEscolar.Apresentacao
 
         private void btnX4_Click(object sender, EventArgs e)
         {
-            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim4");
-            cbxAlunos_SelectedIndexChanged(sender, e);
+            
         }
 
         private void cbxTurmas_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,6 +103,43 @@ namespace MediaEscolar.Apresentacao
             cbxAlunos.Items.Clear();
             controle.PreencherComboBoxAlunos(cbxAlunos, cbxTurmas);
             cbxAlunos.SelectedIndex = 0;
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private Point lastLocation;
+        private void Professor_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+        }
+
+        private void Professor_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void btnX3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnX2_Click_1(object sender, EventArgs e)
+        {
+            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim2");
+            cbxAlunos_SelectedIndexChanged(sender, e);
+        }
+
+        private void btnX4_Click_1(object sender, EventArgs e)
+        {
+            controle.ResetarMedia(controle.GetMatriculaAluno(cbxAlunos.SelectedItem.ToString()), "media_bim4");
+            cbxAlunos_SelectedIndexChanged(sender, e);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MediaEscolar.Modelo;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Apresentacao.Secretaria
@@ -38,6 +39,27 @@ namespace MediaEscolar.Apresentacao.Secretaria
         private void cbxTurmas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private Point lastLocation;
+
+        private void Cadastrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+        }
+
+        private void Cadastrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
         }
     }
 }

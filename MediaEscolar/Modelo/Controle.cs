@@ -12,6 +12,7 @@ namespace MediaEscolar.Modelo
         public String mensagem = "";
         public String nomeUsuario = "";
         public String matriculaUsuario = "";
+        public String turmaUsuario = "";
 
         public bool EntrarNaConta(String matricula, String senha)
         {
@@ -114,7 +115,7 @@ namespace MediaEscolar.Modelo
             while (reader.Read())
             {
                 string turma = reader["turma"].ToString();
-                if (!turmas.Contains(turma)) 
+                if (!turmas.Contains(turma))
                 {
                     cbxTurmas.Items.Add(turma);
                     turmas.Add(turma);

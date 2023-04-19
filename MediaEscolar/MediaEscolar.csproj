@@ -76,6 +76,18 @@
     <Compile Include="Apresentacao\Professor.Designer.cs">
       <DependentUpon>Professor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\Secretaria\Cadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\Secretaria\Cadastrar.Designer.cs">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\Secretaria\Secretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\Secretaria\Secretaria.Designer.cs">
+      <DependentUpon>Secretaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Comandos.cs" />
     <Compile Include="Modelo\Controle.cs" />
     <Compile Include="Program.cs" />
@@ -95,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\Professor.resx">
       <DependentUpon>Professor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\Secretaria\Cadastrar.resx">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\Secretaria\Secretaria.resx">
+      <DependentUpon>Secretaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

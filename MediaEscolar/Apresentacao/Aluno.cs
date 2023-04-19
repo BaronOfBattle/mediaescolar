@@ -1,5 +1,6 @@
 ﻿using MediaEscolar.Modelo;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Apresentacao
@@ -14,6 +15,7 @@ namespace MediaEscolar.Apresentacao
             this.controle = controle;
             lblNomeAluno.Text = controle.nomeUsuario;
             lblMatricula.Text = controle.matriculaUsuario;
+            lblTurma.Text = controle.turmaUsuario;
         }
 
 
@@ -31,24 +33,46 @@ namespace MediaEscolar.Apresentacao
             if (!double.TryParse(lblMedia1.Text, out nota1) || !double.TryParse(lblMedia2.Text, out nota2) ||
                 !double.TryParse(lblMedia3.Text, out nota3) || !double.TryParse(lblMedia4.Text, out nota4))
             {
-                // Alguma nota é inválida
                 lblAprovado.Visible = false;
             }
             else
             {
-                // Todas as notas são válidas, calcular a média
                 double media = (nota1 + nota2 + nota3 + nota4) / 4;
                 if (media >= 6)
                 {
-                    lblAprovado.Text = "Aprovado";
+                    lblAprovado.Text = "APROVADO";
                     lblAprovado.Visible = true;
                 }
                 else
                 {
-                    lblAprovado.Text = "Reprovado";
-                    lblAprovado.Visible = true;
+                    lblReprovado.Visible = true;
                 }
             }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblTurma_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private Point lastLocation;
+        private void Aluno_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void Aluno_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
         }
     }
 }

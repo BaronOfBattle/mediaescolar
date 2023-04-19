@@ -77,7 +77,7 @@ namespace MediaEscolar.Modelo
         public string Cadastrar(String matricula, String senha, String confirmarSenha, bool isProfessor)
         {
             tem = false;
-            int tipoUsuario = isProfessor ? 1 : 0; // 1 para professor, 0 para aluno
+            int tipoUsuario = isProfessor ? 1 : 0;
 
             if (string.IsNullOrEmpty(matricula))
             {
@@ -164,5 +164,3 @@ namespace MediaEscolar.Modelo
         }
     }
 }
-
-

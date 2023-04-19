@@ -2,6 +2,7 @@
 using MediaEscolar.SQL;
 using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MediaEscolar.Apresentacao
@@ -25,6 +26,36 @@ namespace MediaEscolar.Apresentacao
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+        }
+
+        private void Entrar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSair_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private Point lastLocation;
+
+        private void Entrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+        }
+
+        private void Entrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void btnEntrar_Click_1(object sender, EventArgs e)
+        {
             Controle controle = new Controle();
             Conexao con = new Conexao();
             controle.EntrarNaConta(txbMatricula.Text, txbSenha.Text);
@@ -37,7 +68,7 @@ namespace MediaEscolar.Apresentacao
             }
 
             SqlCommand cmd = new SqlCommand();
-            string query = "SELECT nome,matricula FROM logins WHERE matricula = @matricula";
+            string query = "SELECT nome,matricula, turma FROM logins WHERE matricula = @matricula";
             cmd.Parameters.AddWithValue("@matricula", matricula);
             cmd.CommandText = query;
             cmd.Connection = con.Conectar();
@@ -48,6 +79,7 @@ namespace MediaEscolar.Apresentacao
             {
                 controle.nomeUsuario = reader["nome"].ToString();
                 controle.matriculaUsuario = reader["matricula"].ToString();
+                controle.turmaUsuario = reader["turma"].ToString();
             }
             reader.Close();
 
@@ -66,7 +98,7 @@ namespace MediaEscolar.Apresentacao
                     }
                     else if (tipoUsuario == 2)
                     {
-                        Secretaria.Secretaria secretaria = new  Secretaria.Secretaria();
+                        Secretaria.Secretaria secretaria = new Secretaria.Secretaria();
                         secretaria.Show();
                         this.Close();
                     }
@@ -86,11 +118,6 @@ namespace MediaEscolar.Apresentacao
             {
                 MessageBox.Show(controle.mensagem);
             }
-        }
-
-        private void Entrar_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

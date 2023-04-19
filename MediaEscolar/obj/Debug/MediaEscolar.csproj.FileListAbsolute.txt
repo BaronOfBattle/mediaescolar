@@ -13,3 +13,5 @@ D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.pdb
 D:\github\MediaEscolar\MediaEscolar\MediaEscolar.exe.config
 D:\github\MediaEscolar\MediaEscolar\MediaEscolar.exe
 D:\github\MediaEscolar\MediaEscolar\MediaEscolar.pdb
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Apresentacao.Secretaria.Cadastrar.resources
+D:\github\MediaEscolar\MediaEscolar\obj\Debug\MediaEscolar.Apresentacao.Secretaria.Secretaria.resources
